@@ -1,0 +1,59 @@
+Before calling the endpoints Authorization Header needs to be set for each request. 
+If you're using Postman set AuthType to API Key and the following:
+Key: Authorization
+Value: test-api-key-authorization
+Add to: Header
+
+More details you can find on the README.md file.
+
+POST {localHostUrl}/search
+BODY:
+{
+    "destinationAirport": "SKP",
+    "departureAirport": "CPH",
+    "FromDate": "2024-10-01T00:00:00",
+    "ToDate": "2024-11-10T00:00:00"
+}
+RESPONSE:
+{
+    "options": [
+        {
+            "optionCode": "SsG52O",
+            "hotelCode": "8626",
+            "flightCode": "306",
+            "arrivalAirport": "SKP",
+            "price": 0.0
+        },
+        {
+            "optionCode": "Q6lKaG",
+            "hotelCode": "8627",
+            "flightCode": "306",
+            "arrivalAirport": "SKP",
+            "price": 0.0
+        }
+    ]
+}
+
+
+POST {localHostUrl}/book
+BODY:
+{
+    "optionCode": "WwW3id",
+    "searchRequest": {
+        "destinationAirport": "SKP",
+        "departureAirport": "CPH",
+        "FromDate": "2024-06-01T00:00:00",
+        "ToDate": "2024-06-10T00:00:00"
+    }
+}
+RESPONSE:
+{
+    "bookingCode": "WwW3id",
+    "bookingTime": "2024-05-17T19:18:09.3714282+02:00"
+}
+
+GET {localHostUrl}/checkstatus/WwW3id
+RESPONSE:
+{
+    "status": "Pending"
+}

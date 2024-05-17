@@ -19,7 +19,7 @@ JetSetGo is an ASP.NET Core application designed to manage flights and booking o
 - Implements middleware to handle exceptions globally and return standardized error responses.
 
 ### Input Validation with FluentValidation
--Uses FluentValidation to enforce validation rules on input models, ensuring data integrity and consistency.
+- Uses FluentValidation to enforce validation rules on input models, ensuring data integrity and consistency.
 
 ## Technologies Used
 - ASP.NET Core 6
